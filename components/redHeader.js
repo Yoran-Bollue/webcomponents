@@ -1,5 +1,5 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const template2 = document.createElement('template');
+template2.innerHTML = `
 <style>
     header {
         display: block;
@@ -45,7 +45,7 @@ class RedHeader extends HTMLElement {
         super();
 
         this.attachShadow({ mode: 'open' })
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.appendChild(template2.content.cloneNode(true));
         
         let buttons = this.getAttribute('buttons').split(',');
         console.log(buttons);
