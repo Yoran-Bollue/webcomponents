@@ -13,6 +13,10 @@ class TopBarStats extends HTMLElement {
                     top: 0;
                     width: 100%;
                     z-index: 1000; /* Ensure the bar appears on top of other content */
+                    display: flex;
+                }
+                .top-bar p {
+                    margin-right: 20px;
                 }
                 body {
                     margin-top: 50px; /* Adjust body margin to prevent content from being hidden under the top bar */
