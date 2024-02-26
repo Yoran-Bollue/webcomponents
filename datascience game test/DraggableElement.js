@@ -40,8 +40,26 @@ class DraggableElement extends HTMLElement {
             offsetX: event.offsetX,
             offsetY: event.offsetY
         };
+    
+        // Append the element to the body so it's not restricted to the sidebar container
+        document.body.appendChild(this);
     }
-
+    
+    handleDragEnd() {
+        this.draggable = false;
+    
+        // Check if the element is within the main container
+        const container = document.getElementById('container');
+        const rect = container.getBoundingClientRect();
+        const x = parseInt(this.style.left);
+        const y = parseInt(this.style.top);
+    
+        if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+            // If the element is within the main container, append it to the container
+            container.appendChild(this);
+        }
+    }
+    
     handleDrag(event) {
         if (this.draggable) {
             const x = event.clientX - this.dragData.offsetX;
@@ -50,10 +68,6 @@ class DraggableElement extends HTMLElement {
             this.style.left = x + 'px';
             this.style.top = y + 'px';
         }
-    }
-
-    handleDragEnd() {
-        this.draggable = false;
     }
 }
 
