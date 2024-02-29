@@ -1,4 +1,4 @@
-class CopyableElement extends HTMLElement {
+class DragableElement extends HTMLElement {
     constructor() {
         super();
         const title = this.getAttribute("title")
@@ -23,4 +23,4 @@ class CopyableElement extends HTMLElement {
     }
 }
 
-customElements.define('copyable-element', CopyableElement);
+customElements.define('dragable-element', DragableElement);
