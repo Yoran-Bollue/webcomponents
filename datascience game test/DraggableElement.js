@@ -8,7 +8,7 @@ class DraggableElement extends HTMLElement {
                     position: relative;
                     width: 100px;
                     height: 100px;
-                    border: 1px solid #000;
+                    /*border: 1px solid #000;*/
                 }
                 img {
                     width: 80%; /* Adjust the size of the image here */
@@ -22,7 +22,7 @@ class DraggableElement extends HTMLElement {
                 }
             </style>
             <div class="draggable-element">
-                <img src="kisspng-analytics-big-data-data-analysis-computer-icons-bu-kpi-5b4a1dc72e12d7.5416296415315839431887.jpg" alt="Logo">
+                <img src="kisspng-analytics-big-data-data-analysis-computer-icons-bu-kpi-5b4a1dc72e12d7.5416296415315839431887.png" alt="Logo">
                 <p class="name">Custom Draggable Element</p>
             </div>
         `;
