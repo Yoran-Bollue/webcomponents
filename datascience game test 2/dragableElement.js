@@ -3,16 +3,18 @@ class DragableElement extends HTMLElement {
         super();
         const title = this.getAttribute("title")
         this.attachShadow({ mode: 'open' });
-        this.style.cursor = "move"
+        this.style.width = "60px";
+        this.style.display = "block"
+        this.style.textAlign = "center"
+        this.style.marginRight= "10px"
         this.shadowRoot.innerHTML = `
             <style>
                 img {
-                    width: 50px; 
+                    width: 100%; 
                 }
                 p{
                     margin: 0;
                     font-size: 12px;
-                    
                 }
             </style>
             <div>
