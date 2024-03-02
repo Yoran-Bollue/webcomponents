@@ -9,7 +9,7 @@ newFlowButton.addEventListener("click", () => {
     const splitArray = lastFlowContainerTitle.split(/(\d+)/).filter(Boolean);
 
     const newFlowContainer = document.createElement('flow-container');
-    newFlowContainer.setAttribute('title', `${splitArray[0]}${++splitArray[1]}`);
+    newFlowContainer.setAttribute('title', `${splitArray[0]} ${++splitArray[1]}`);
 
     scene.appendChild(newFlowContainer);
     flowContainers.push(newFlowContainer);

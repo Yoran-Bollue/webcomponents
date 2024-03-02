@@ -5,6 +5,9 @@ class FlowContainer extends HTMLElement {
         const title = this.getAttribute("title");
         
         this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
             <style>
                 :host {
                     display: flex;
@@ -30,18 +33,23 @@ class FlowContainer extends HTMLElement {
 
                 button {
                     cursor: pointer;
+                    width: 10%;
+                    font-size:18px;
+                    color: #da2525;
                 }
 
                 dragable-element {
                     height: 60%;
                 }
 
+                dragable-element i, dragable-element p {
+                    font-size: 25px;  
+                }
+
             </style>
             <h4>${title}</h4>
-            <div class="wrapper">
-
-            </div>
-            <button id="deleteButton">Delete</button>
+            <div class="wrapper"></div>
+            <button id="deleteButton"><i class="fa-solid fa-trash"></i></button>
             `;
 
             const deleteButton = this.shadowRoot.getElementById('deleteButton');
@@ -60,7 +68,7 @@ class FlowContainer extends HTMLElement {
             this.updateTitle();
         }
     }
-    
+
     updateTitle() {
         const titleElement = this.shadowRoot.querySelector('h4');
         if (titleElement) {

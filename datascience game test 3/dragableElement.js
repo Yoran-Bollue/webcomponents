@@ -6,6 +6,7 @@ class DragableElement extends HTMLElement {
         this.attachShadow({ mode: 'open' });
 
         this.shadowRoot.innerHTML = `
+        
             <style>
                 :host {
                     display: flex;
@@ -19,7 +20,7 @@ class DragableElement extends HTMLElement {
                     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
                     cursor: grab;
                     user-select: none;
-                    margin: 0 5px;
+                    margin-right: 5px;
                     transition: all 0.1s ease-in-out;
                     padding: 10px 0
                 }
