@@ -28,7 +28,22 @@ body {
   min-width: 75%;
   position: absolute;
   top: 10%;
-  left: 25%;
+  left: 30%;
 }
 
 
+
+
+#scene button {
+  background-color: #007C5A;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#scene button:hover {
+  background-color: #005E46;
+}
