@@ -16,6 +16,7 @@ class DATA extends HTMLElement {
               }
               
               .bar {
+                position: relative;
                 height: 20px;
                 background-color: #ccc;
                 cursor: move;
@@ -40,8 +41,10 @@ class DATA extends HTMLElement {
               
               .close-btn {
                 position: absolute;
-                top: 7px;
-                right: 7px;
+                right: 2px;
+                top: 50%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
                 width: 17px;
                 height: 17px;
                 background-color: #f0f0f0;
@@ -49,8 +52,10 @@ class DATA extends HTMLElement {
                 cursor: pointer;
                 font-size: 10px;
                 text-align: center;
-                line-height: 20px;
                 border-radius: 50%;
+                font-weight: bold;
+                align-items: center;
+                justify-content: center;
               }                         
             </style>
             <div class="brick">
