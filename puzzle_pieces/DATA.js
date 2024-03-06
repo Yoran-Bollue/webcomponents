@@ -13,6 +13,7 @@ class DATA extends HTMLElement {
                 height: 100px;
                 background-color: #f0f0f0;
                 border-radius: 5px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow effect */
               }
               
               .bar {
