@@ -1,0 +1,9 @@
+.slide
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.slide data-element{
+    margin-left: 40px;
+}
