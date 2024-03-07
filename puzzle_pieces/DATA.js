@@ -57,14 +57,33 @@ class DATA extends HTMLElement {
                 font-weight: bold;
                 align-items: center;
                 justify-content: center;
-              }                         
+              }      
+              .bar h2 {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                font-size: 100%;
+                text-align: center;
+                top: 55%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+              }                   
             </style>
             <div class="brick">
                 <div class="bar">
+                    <h2>Data</h2>
                     <button class="close-btn">X</button>
                 </div>
                 <div class="content">
                     <!-- Content of the brick goes here -->
+                    <form>
+                      <label for="file">Select a file:</label>
+                      <select name="file" id="file">
+                        <option value="titanic">titanic</option>
+                        <option value="iris">iris</option>
+                      </select>
+                    </form>
                 </div>
                 <div class="connection-point"></div>
             </div>
