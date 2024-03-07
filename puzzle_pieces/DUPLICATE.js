@@ -84,7 +84,6 @@ class DUPLICATE extends HTMLElement {
               .tooltip {
                 position: relative;
                 display: inline-block;
-                border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
               }
 
               /* Tooltip text */
@@ -121,7 +120,13 @@ class DUPLICATE extends HTMLElement {
                 <div class="connection-point-right-top"></div>
                 <div class="connection-point-right-bottom"></div>
                 <div class="connection-point-left"></div>
-                <span class="tooltiptext">Input:<br>- Dataset: dataframe<br>Output:<br>- 2x Dataset: dataframe</span>
+                <span class="tooltiptext">Input:<ul>
+                        <li>Dataset: dataframe</li>
+                    </ul>
+                    Output:<ul>
+                        <li>2x Dataset: dataframe</li>
+                    </ul>
+                    </span>
             </div>
 
         `;

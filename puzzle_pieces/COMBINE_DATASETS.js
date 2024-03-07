@@ -1,4 +1,4 @@
-class DATA extends HTMLElement {
+class COMBINE_DATASETS extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -7,10 +7,10 @@ class DATA extends HTMLElement {
             <style>
             .brick {
                 position: absolute;
-                top: 0px; /* adjust as needed */
-                left: 100px; /* adjust as needed */
+                top: -100px; /* adjust as needed */
+                left: 200px; /* adjust as needed */
                 width: 200px; /* adjusted width for protrusion */
-                height: 100px;
+                height: 300px;
                 background-color: #f0f0f0;
                 border-radius: 5px;
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow effect */
@@ -69,6 +69,27 @@ class DATA extends HTMLElement {
                 -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
               }
+              .connection-point-left-top {
+                position: absolute;
+                top: 25%;
+                left: -10px; /* adjust for the protrusion */
+                transform: translateY(-50%);
+                width: 20px;
+                height: 40px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+              }
+
+              .connection-point-left-bottom {
+                position: absolute;
+                top: 75%;
+                left: -10px; /* adjust for the protrusion */
+                transform: translateY(-50%);
+                width: 20px;
+                height: 40px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+              }
               /* Tooltip container */
               .tooltip {
                 position: relative;
@@ -101,32 +122,34 @@ class DATA extends HTMLElement {
             </style>
             <div class="brick tooltip">
                 <div class="bar">
-                    <h2>Data</h2>
+                    <h2>Combine Datasets</h2>
                     <button class="close-btn">X</button>
                 </div>
                 <div class="content">
                     <!-- Content of the brick goes here -->
                     <form>
-                      <label for="file">Select a file:</label>
-                      <select name="file" id="file">
-                        <option value="titanic">titanic</option>
-                        <option value="iris">iris</option>
-                      </select>
+                      <label for="dataset1">Join Column Dataset 1:</label>
+                      <input type="text" id="dataset1" name="dataset1">
+                      <label for="dataset2">Join Column Dataset 2:</label>
+                      <input type="text" id="dataset2" name="dataset2">
                     </form>
                 </div>
+                <div class="connection-point-left-top"></div>
+                <div class="connection-point-left-bottom"></div>
                 <div class="connection-point"></div>
                 <span class="tooltiptext">
-                  Input:<ul>
-                  <li>/</li>
-                  </ul>
-                  Output:<ul>
-                    <li>Dataset: dataframe</li>
-                  <ul>
-                  </span>
+                    Input:<ul>
+                        <li>Dataset 1: dataframe</li>
+                        <li>Dataset 2: dataframe</li>
+                    </ul>
+                    Output:<ul>
+                        <li>Dataset: dataframe</li>
+                    </ul>
+                </span>
             </div>
 
         `;
     }
 }
 
-customElements.define('data-element', DATA);
+customElements.define('combine-element', COMBINE_DATASETS);
