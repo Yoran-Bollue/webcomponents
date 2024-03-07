@@ -68,9 +68,39 @@ class DATA extends HTMLElement {
                 top: 55%;
                 -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
-              }                   
+              }
+              /* Tooltip container */
+              .tooltip {
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+              }
+
+              /* Tooltip text */
+              .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: left;
+                padding: 5px;
+                border-radius: 6px;
+              
+                /* Position the tooltip text - see examples below! */
+                position: absolute;
+                z-index: 1;
+                width: 200px;
+                top: calc(100% + 5px);
+                left: 50%;
+                margin-left: -100px; /* Use half of the width (120/2 = 60), to center the tooltip */
+              }
+
+              /* Show the tooltip text when you mouse over the tooltip container */
+              .tooltip:hover .tooltiptext {
+                visibility: visible;
+              }
             </style>
-            <div class="brick">
+            <div class="brick tooltip">
                 <div class="bar">
                     <h2>Data</h2>
                     <button class="close-btn">X</button>
@@ -86,6 +116,7 @@ class DATA extends HTMLElement {
                     </form>
                 </div>
                 <div class="connection-point"></div>
+                <span class="tooltiptext">Input:<br>/<br>Output:<br>- Dataset: dataframe</span>
             </div>
 
         `;
