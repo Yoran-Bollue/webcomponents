@@ -8,7 +8,7 @@ class DUPLICATE extends HTMLElement {
             .brick {
                 position: absolute;
                 top: 100px; /* adjust as needed */
-                left: 100px; /* adjust as needed */
+                left: 140px; /* adjust as needed */
                 width: 50px; /* adjusted width for protrusion */
                 height: 210px;
                 background-color: #f0f0f0;
@@ -79,9 +79,39 @@ class DUPLICATE extends HTMLElement {
                 font-weight: bold;
                 align-items: center;
                 justify-content: center;
-              }                         
+              }
+              /* Tooltip container */
+              .tooltip {
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+              }
+
+              /* Tooltip text */
+              .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: left;
+                padding: 5px;
+                border-radius: 6px;
+              
+                /* Position the tooltip text - see examples below! */
+                position: absolute;
+                z-index: 1;
+                width: 200px;
+                top: calc(100% + 5px);
+                left: 50%;
+                margin-left: -100px; /* Use half of the width (120/2 = 60), to center the tooltip */
+              }
+
+              /* Show the tooltip text when you mouse over the tooltip container */
+              .tooltip:hover .tooltiptext {
+                visibility: visible;
+              }
             </style>
-            <div class="brick">
+            <div class="brick tooltip">
                 <div class="bar">
                     <button class="close-btn">X</button>
                 </div>
@@ -91,6 +121,7 @@ class DUPLICATE extends HTMLElement {
                 <div class="connection-point-right-top"></div>
                 <div class="connection-point-right-bottom"></div>
                 <div class="connection-point-left"></div>
+                <span class="tooltiptext">Input:<br>- Dataset: dataframe<br>Output:<br>- 2x Dataset: dataframe</span>
             </div>
 
         `;

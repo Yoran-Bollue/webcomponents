@@ -7,7 +7,7 @@ class DATA extends HTMLElement {
             <style>
             .brick {
                 position: absolute;
-                top: 100px; /* adjust as needed */
+                top: 0px; /* adjust as needed */
                 left: 100px; /* adjust as needed */
                 width: 200px; /* adjusted width for protrusion */
                 height: 100px;
