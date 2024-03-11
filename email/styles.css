@@ -9,7 +9,10 @@ body {
     max-width: 600px;
     margin: 50px auto;
     background-color: #c0c0c0; /* Window background color */
-    border: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
   }
   
   .window-title-bar {
@@ -18,12 +21,29 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4px;
+    padding: 2px;
+    margin: 2px;
   }
   
   .window-title {
     font-weight: bold;
     padding-left: 8px;
+  }
+
+  .window-menu-bar {
+    background-color: #c0c0c0;
+    display: flex;
+    padding: 2px 8px;
+  }
+  
+  .menu {
+    padding: 2px 8px;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .menu:hover {
+    background-color: #949494;
   }
   
   .window-controls {
@@ -31,11 +51,34 @@ body {
   }
   
   .window-control {
-    width: 10px;
-    height: 10px;
-    margin: 0 3px;
+    width: 15px;
+    height: 15px;
+    margin: 0;
     border: 1px solid #fff;
+    background-color: #c0c0c0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
   }
+
+    .window-control:hover {
+        background-color: #949494;
+        border-top: 1px solid #000;
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #fff;
+        border-right: 1px solid #fff;
+    }
+
+    .close-button {
+        margin-left: 2px;
+    }
   
   .window-content {
     padding: 20px;
