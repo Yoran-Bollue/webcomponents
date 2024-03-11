@@ -7,40 +7,84 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="window">
-    <div class="window-title-bar">
-      <div class="window-title">Inbox - Email</div>
-      <div class="window-controls">
-        <div class="window-control">&#x2500;</div>
-        <div class="window-control" style="font-size: 20px;">&#x25a1;</div>
-        <div class="window-control close-button" style="font-size: 14px;">&#x2715;</div>
-      </div>
-    </div>
-    <div class="window-menu-bar">
-        <div class="menu"><u>F</u>ile</div>
-        <div class="menu"><u>E</u>dit</div>
-        <div class="menu"><u>V</u>iew</div>
-        <div class="menu"><u>T</u>ools</div>
-        <div class="menu">Co<u>m</u>pose</div>
-        <div class="menu"><u>H</u>elp</div>
-    </div>
-    <div class="window-content">
-      <div class="inbox">
-        <div class="inbox-item">
-          <div class="inbox-item-from">John Doe</div>
-          <div class="inbox-item-subject">Hello</div>
+  <div class="window outer-border">
+    <div class="inner-border">
+        <div class="window-title-bar">
+            <div class="logo-title">
+                <img class="window-logo" src="tumblr_28f7d41869ff8aec052777020eeb6242_385b0d2b_540.png"/>
+                <div class="window-title">Inbox - Email</div>
+            </div>
+        <div class="window-controls">
+            <div class="outer-border outer-border-button">
+                <div class="window-control inner-border inner-border-button">&#x2500;</div>
+            </div>
+            
+            <div class="outer-border outer-border-button">
+                <div class="window-control inner-border inner-border-button" style="font-size: 20px;">&#x25a1;</div>
+            </div>
+
+            <div class="outer-border outer-border-button close-button">
+                <div class="window-control inner-border inner-border-button" style="font-size: 14px;">&#x2715;</div>
+            </div>
+
         </div>
-        <div class="inbox-item">
-          <div class="inbox-item-from">Jane Smith</div>
-          <div class="inbox-item-subject">Meeting</div>
         </div>
-      </div>
-      <div class="email-content">
-        <p>This is an email content.</p>
-      </div>
-    </div>
-    <div class="window-footer">
-      
+        <div style="border-bottom: 1px solid white; margin: 0 5px;">
+            <div class="window-menu-bar">
+                <div class="menu"><u>F</u>ile</div>
+                <div class="menu"><u>E</u>dit</div>
+                <div class="menu"><u>V</u>iew</div>
+                <div class="menu"><u>T</u>ools</div>
+                <div class="menu">Co<u>m</u>pose</div>
+                <div class="menu"><u>H</u>elp</div>
+            </div>
+        </div>
+        <div>
+            <div class="window-toolbar">
+                <div class="toolbar-section">
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                </div>
+                <div class="toolbar-section">
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                </div>
+                <div class="toolbar-section">
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                </div>
+                <div class="toolbar-section">
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                </div>
+                <div class="toolbar-section">
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                </div>
+                <div class="toolbar-section">
+                    <div class="outer-border outer-border-button"><div class="toolbar-button inner-border inner-border-button"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="window-content">
+        <div class="inbox">
+            <div class="inbox-item">
+            <div class="inbox-item-from">John Doe</div>
+            <div class="inbox-item-subject">Hello</div>
+            </div>
+            <div class="inbox-item">
+            <div class="inbox-item-from">Jane Smith</div>
+            <div class="inbox-item-subject">Meeting</div>
+            </div>
+        </div>
+        <div class="email-content">
+            <p>This is an email content.</p>
+        </div>
+        </div>
+        <div class="window-footer">
+        
+        </div>
     </div>
   </div>
 </body>
