@@ -124,13 +124,34 @@ body {
     }
   
   .window-content {
-    padding: 20px;
+    padding: 0 2px;
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    gap: 2px;
   }
   
   .inbox {
-    border: 1px solid #000;
-    padding: 10px;
-    margin-bottom: 10px;
+    border-left: #808080 solid;
+    border-bottom: white solid;
+    border-right: white solid;
+    border-width: 1px;
+    padding: 0;
+    /* margin-bottom: 10px; */
+    background-color: #fff;
+    width: 30%;
+    position: relative;
+  }
+
+  .inbox-insert {
+    border-top: black solid;
+    border-left: black solid;
+    border-bottom: #C0C0C0 solid;
+    border-width: 1px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
   }
   
   .inbox-item {
@@ -140,11 +161,38 @@ body {
   .inbox-item-from {
     font-weight: bold;
   }
+
+  .email-content {
+    border-left: #808080 solid;
+    border-bottom: white solid;
+    border-right: white solid;
+    border-width: 1px;
+    padding: 0;
+    background-color: #fff;
+    width: calc(70% - 2px);
+    position: relative;
+  }
+
+  .email-content-insert {
+    border-top: black solid;
+    border-left: black solid;
+    border-bottom: #C0C0C0 solid;
+    border-width: 1px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
   
   .window-footer {
     display: flex;
-    justify-content: flex-end;
-    padding: 10px;
+    justify-content: flex-start;
+    margin: 2px;
+    border-top: solid #808080;
+    border-left: solid #808080;
+    border-right: solid #FFFFFF;
+    border-bottom: solid #FFFFFF;
+    border-width: 1px;
   }
 
   .window-toolbar {
@@ -155,6 +203,11 @@ body {
   .toolbar-section {
     display: inline-flex;
     margin-left: 10px;
+  }
+
+  .toolbar-image {
+    image-rendering: pixelated;
+    height: 70%;
   }
   
   .toolbar-button {
