@@ -1,7 +1,16 @@
+@font-face {
+    font-family: 'W95FA'; /* Choose a name for your font family */
+    src: url('W95FA/w95fa.woff2') format('woff2'),
+         url('W95FA/w95fa.woff') format('woff'),
+         url('W95FA/W95FA.otf') format('opentype');
+    /* Add more src lines if you have additional font file formats */
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    font-family: 'W95FA', sans-serif;
     background-color: #008080; /* Windows 95 background color */
   }
 
@@ -50,6 +59,7 @@ body {
   
   .window-title-bar {
     background-color: #000080; /* Title bar background color */
+    background-color: #53325B;
     color: #fff;
     display: flex;
     justify-content: space-between;
