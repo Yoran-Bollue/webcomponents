@@ -44,12 +44,13 @@ class InboxElement extends HTMLElement {
           }
           
           .window {
-            max-width: 600px;
-            margin: 50px auto;
+            width: 600px;
+            margin: 0;
             background-color: #c0c0c0; /* Window background color */
             border-top: solid #DFDFDF;
             border-left: solid #DFDFDF;
             border-width: 1px;
+            position: absolute;
           }
         
           .window > .inner-border {
@@ -476,7 +477,7 @@ class InboxElement extends HTMLElement {
     connectedCallback() {
       this.draggable = false;
       this.dragData = {};
-      this.element = this.shadowRoot.querySelector('.window');
+      this.element = this.shadowRoot.querySelector('.window-title-bar');
       this.element.addEventListener('mousedown', this.handleDragStart.bind(this));
       document.addEventListener('mouseup', this.handleDragEnd.bind(this));
       document.addEventListener('mousemove', this.handleDrag.bind(this));
