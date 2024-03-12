@@ -187,7 +187,7 @@ body {
     border-width: 1px;
     padding: 0;
     background-color: #fff;
-    width: calc(70% - 2px);
+    /* width: calc(70% - 2px); */
     position: relative;
   }
 
@@ -200,6 +200,26 @@ body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+  }
+
+  .email-header {
+    font-size: 12px;
+    background-color: #C0C0C0;
+    padding: 3px;
+    height: 10%;
+    justify-content: flex-start;
+    border-bottom: #DFDFDF solid;
+    border-right: #DFDFDF solid;
+    border-top: #808080 solid;
+    border-left: #808080 solid;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+  }
+
+  .email-text {
+    font-size: 12px;
+    padding: 4px;
   }
   
   .window-footer {
@@ -263,7 +283,6 @@ body {
     border-bottom: solid black;
     border-right: solid black;
     border-width: 1px;
-    padding: 1px;
   }
 
   /* Track */
@@ -287,6 +306,10 @@ body {
     margin: 2px;
   }
 
+  .scrollbox::-webkit-scrollbar-corner {
+    background-color: #C0C0C0;
+  }
+
   .scrollbox::-webkit-scrollbar-button {
     background-color: #C0C0C0;
     border-bottom: solid #808080;
@@ -302,7 +325,7 @@ body {
     background-position: center;
   }
 
-  .scrollbox::-webkit-scrollbar-button:active,.inbox-insert::-webkit-scrollbar-thumb:active {
+  .scrollbox::-webkit-scrollbar-button:active,.scrollbox::-webkit-scrollbar-thumb:active {
     border-top: solid #808080;
     border-left: solid #808080;
     border-right: solid white;
