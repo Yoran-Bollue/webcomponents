@@ -70,6 +70,11 @@ class InboxElement extends HTMLElement {
             align-items: center;
             padding: 2px;
             margin: 2px;
+            cursor: grab;
+          }
+
+          .window-title-bar:active {
+            cursor: grabbing;
           }
           
           .window-title {
@@ -173,6 +178,7 @@ class InboxElement extends HTMLElement {
             font-size: 12px;
             padding: 2px;
             border: 1px white solid;
+            cursor: pointer;
           }
         
             .inbox-item:hover {
