@@ -44,7 +44,10 @@ class InboxElement extends HTMLElement {
           }
           
           .window {
-            width: 600px;
+            min-height: 300px;
+            min-width: 500px;
+            width: 500px;
+            height: 300px;
             margin: 0;
             background-color: #c0c0c0; /* Window background color */
             border-top: solid #DFDFDF;
@@ -146,7 +149,7 @@ class InboxElement extends HTMLElement {
             padding: 0 2px;
             display: flex;
             justify-content: space-between;
-            height: 250px;
+            height: calc(100% - 98px);
             gap: 2px;
           }
           
@@ -158,7 +161,7 @@ class InboxElement extends HTMLElement {
             padding: 0;
             /* margin-bottom: 10px; */
             background-color: #fff;
-            width: 30%;
+            width: 180px;
             position: relative;
           }
         
@@ -197,7 +200,7 @@ class InboxElement extends HTMLElement {
             border-width: 1px;
             padding: 0;
             background-color: #fff;
-            /* width: calc(70% - 2px); */
+            /* width: calc(70% - 180px); */
             position: relative;
           }
         
@@ -216,7 +219,7 @@ class InboxElement extends HTMLElement {
             font-size: 12px;
             background-color: #C0C0C0;
             padding: 3px;
-            height: 10%;
+            height: 30px;
             justify-content: flex-start;
             border-bottom: #DFDFDF solid;
             border-right: #DFDFDF solid;
@@ -242,6 +245,16 @@ class InboxElement extends HTMLElement {
             border-bottom: solid #FFFFFF;
             border-width: 1px;
             font-size: 12px;
+            position: relative;
+          }
+
+          .resize-handle {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            cursor: nwse-resize;
           }
         
           .window-toolbar {
@@ -360,7 +373,7 @@ class InboxElement extends HTMLElement {
           }
         </style>
         <div class="window outer-border">
-    <div class="inner-border">
+    <div class="inner-border" style="height: 100%">
         <div class="window-title-bar">
             <div class="logo-title">
                 <img class="window-logo" src="images/logo.png"/>
@@ -460,9 +473,9 @@ class InboxElement extends HTMLElement {
                     </div>
                 </div>
             </div>
-            <div style="width: 70%; position: relative;">
+            <div style="width: calc(100% - 180px); position: relative;">
                 <div class="email-header inbox-item-from">From: Bill Gates<br>Subject: Windows 95</div>
-                <div class="email-content" style="height: calc(90% - 8px); bottom: 0;">
+                <div class="email-content" style="height: calc(100% - 38px); bottom: 0;">
                     <div class="email-content-insert scrollbox">
                         <div class="email-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia earum optio debitis, odit harum excepturi voluptas porro atque, consectetur qui dolorum aperiam vero dolor provident reiciendis? Ipsum deserunt dolor nostrum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, ipsum saepe. Aliquid nemo eius voluptatem fuga impedit dolore ullam in illum reprehenderit consequuntur. Facilis beatae porro quia aspernatur asperiores? Voluptatem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, nesciunt neque voluptate omnis, nulla dolor necessitatibus mollitia eligendi consequatur corporis quas consequuntur dolore aut odit iure cum iusto eos ab. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis mollitia doloremque, animi quidem illum neque voluptatibus soluta quae dolores, modi minus facilis consequuntur minima corporis. Voluptate sapiente consectetur impedit iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsum rem amet impedit nisi consectetur sequi excepturi laudantium, quia vero quasi temporibus ratione voluptas! Ipsum eligendi ea sit magni accusamus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta aliquid laudantium aspernatur quasi, pariatur alias animi deserunt nulla hic minus odio recusandae quas. Eius qui eligendi soluta minima voluptatum.</div>
                     </div>
@@ -473,10 +486,11 @@ class InboxElement extends HTMLElement {
         <div class="window-footer">
             <div class="status-bar">
                 <div class="status-bar-section">1 Item, 1 Unread</div>
+            </div>
+            <img class="resize-handle" src="images/resize.png"></img>
         </div>
-    </div>
-  </div>
-  </div>
+      </div>
+      </div>
       `;
     }
   
@@ -487,6 +501,12 @@ class InboxElement extends HTMLElement {
       this.element.addEventListener('mousedown', this.handleDragStart.bind(this));
       document.addEventListener('mouseup', this.handleDragEnd.bind(this));
       document.addEventListener('mousemove', this.handleDrag.bind(this));
+
+      // event listener for resizing
+      const resizeHandle = this.shadowRoot.querySelector('.resize-handle');
+      resizeHandle.addEventListener('mousedown', this.handleResizeStart.bind(this));
+      document.addEventListener('mouseup', this.handleResizeEnd.bind(this));
+      document.addEventListener('mousemove', this.handleResize.bind(this));
     }
   
     handleDragStart(event) {
@@ -511,7 +531,29 @@ class InboxElement extends HTMLElement {
     handleDragEnd() {
       this.draggable = false;
     }
-  }
+
+    handleResizeStart(event) {
+      event.preventDefault();
+      this.resizable = true;
+      this.resizeData = {
+          offsetX: event.offsetX,
+          offsetY: event.offsetY
+      };
+    }
+
+    handleResize(event) {
+        if (this.resizable) {
+            const width = event.clientX - this.getBoundingClientRect().left;
+            const height = event.clientY - this.getBoundingClientRect().top;
+            this.shadowRoot.querySelector('.window').style.width = width + 'px';
+            this.shadowRoot.querySelector('.window').style.height = height + 'px';
+        }
+    }
+
+    handleResizeEnd() {
+        this.resizable = false;
+    }
+}
   
-  customElements.define('inbox-element', InboxElement);
+customElements.define('inbox-element', InboxElement);
   
